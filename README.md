@@ -142,17 +142,17 @@
     it is more like input ty=e text but it has value property to indicate the value when that radio button select and need to set value to checked property like below
 <br/>
     <pre>
-     <label>
-        <input
+     &lt;label&gt;
+        &lt;input
         name="gender"  
         type="radio" 
         value="male"
         checked = {this.state.gender === "male"}
-        onChange={this.handleChange} />
+        onChange={this.handleChange} /&gt;
         Male
-      </label>
+      &lt;/label&gt;
       <br/>
-      <label>
+      &lt;label&gt;
         <input
         name="gender"  
         type="radio" 
@@ -160,7 +160,7 @@
         checked = {this.state.gender === "female"}
         onChange={this.handleChange} />
         Female
-      </label>    
+      &lt;/label&gt;  
       <br/>
       {this.state.gender}  
     </pre>

@@ -153,12 +153,12 @@
       &lt;/label&gt;
       <br/>
       &lt;label&gt;
-        <input
+        &lt;input
         name="gender"  
         type="radio" 
         value="female"
         checked = {this.state.gender === "female"}
-        onChange={this.handleChange} />
+        onChange={this.handleChange} /&gt;
         Female
       &lt;/label&gt;  
       <br/>

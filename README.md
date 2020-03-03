@@ -99,3 +99,69 @@
         </li>
     </ol>
 </p>
+<p>
+    When we use for and track for control data we use state to store values, and we use controls change, check event to track the value change.
+    <pre>
+            handleChange(e)
+            {
+            const {name, value} = e.target;
+            this.setState({
+                //[e.target.name] : e.target.value
+                [name] : value
+            })
+            }
+    </pre>
+    as per the above sample we can use common handler to track all the controls values. here e.target has name, vale property, by declaring <b>const {name, value} = e.target</b> value and name of event automatically copied to the variabl ename and value.<br>
+    <u>TextArea</u>
+    normal textare syntax is &lt;textarea&gt;&lt;/textarea&gt;  but in react we use self closing textare like <br>
+    &lt;textarea value="" onChange="handleChange"/&gt; <br>
+    <u>Checkbox</u>
+    <br>
+    <pre>
+        &lt;label&gt;
+            &lt;input
+                name="isMale"  
+                type="checkbox" 
+                checked={this.state.isMale} 
+                onChange={this.handleChange} /&gt;
+            Is Male?
+        &lt;/label&gt;
+    </pre>
+    we can modify the change event handler sucha way that handle checked property of the checkbox
+    <pre>
+        handleChange(e)
+            {
+            //[e.target.name] : e.target.value
+            const {name, value, type, checked} = e.target;
+            type === "checkbox" ? 
+            this.setState({[name] : checked}) :
+            this.setState({[name] : value })
+            }
+    </pre>
+    <u>Radio</u>
+    it is more like input ty=e text but it has value property to indicate the value when that radio button select and need to set value to checked property like below
+<br/>
+    <pre>
+     <label>
+        <input
+        name="gender"  
+        type="radio" 
+        value="male"
+        checked = {this.state.gender === "male"}
+        onChange={this.handleChange} />
+        Male
+      </label>
+      <br/>
+      <label>
+        <input
+        name="gender"  
+        type="radio" 
+        value="female"
+        checked = {this.state.gender === "female"}
+        onChange={this.handleChange} />
+        Female
+      </label>    
+      <br/>
+      {this.state.gender}  
+    </pre>
+</p>

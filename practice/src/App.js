@@ -75,27 +75,84 @@ import Product from './components/Product';
 // }
 //#endregion
 
-import Conditional from './components/Conditional'
+//#region Conditional Components
+// import Conditional from './components/Conditional'
+// class App extends Component{
+//   constructor(){
+//     super()
+//     this.state={
+//       isLoading : true
+//     }
+//   }
+//   componentDidMount(){
+//     setTimeout(() =>{
+//       this.setState({
+//         isLoading : false
+//       })
+//     }, 1500)
+//   }
+//   render(){
+//     return(
+//       <div>
+//         {this.state.isLoading ? 
+//           <h1> Loading....</h1>:
+//           // <Conditional isLoading={this.state.isLoading} />
+//           <Conditional />
+//         }
+//       </div>
+//     )
+//   }
+// }
+
+//#endregion
+
+//#region 
+// class App extends Component{
+//   constructor(){
+//     super()
+//     this.state = {
+//       unreadMessages: [
+//         "Call your mom!", "New spam email available, All links are definitely safe to click."
+//       ]
+//     }
+//   }
+//   render(){
+//     return(
+//       <div>
+//         {
+//           // this.state.unreadMessages.length > 0 ?
+//           // <h2>You have {this.state.unreadMessages.length} unread messages!</h2>
+//           // : null
+
+//           //We can also code like below
+//           this.state.unreadMessages.length > 0 && <h2>You have {this.state.unreadMessages.length} unread messages!</h2>
+//         }
+//       </div>
+//     )
+//   }
+
+// }
+//#endregion
 class App extends Component{
   constructor(){
     super()
-    this.state={
-      isLoading : true
+    this.state = {
+      loggedIn: false
     }
+    this.handleClick = this.handleClick.bind(this);
   }
-  componentDidMount(){
-    setTimeout(() =>{
-      this.setState({
-        isLoading : false
-      })
-    }, 1500)
+  handleClick = () =>{
+    this.setState((prevState) => {
+      return this.state.loggedIn = !prevState.loggedIn
+    })
   }
   render(){
     return(
       <div>
-        <Conditional isLoading={this.state.isLoading} />
+        <button id="btnLogIn" onClick={this.handleClick}>{this.state.loggedIn ? "Logout": "LogIn"}</button>
       </div>
     )
   }
+
 }
 export default App;

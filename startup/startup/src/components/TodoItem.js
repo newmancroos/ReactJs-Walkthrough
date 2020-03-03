@@ -6,15 +6,19 @@ class TodoItem extends React.Component{
     {
         super(props);
     }
-
+   
     render(){
-
+        const completedStle = {
+            fontStyle : "italic",
+            color: "#cdcdcd",
+            textDecoration : "line-through"
+        }
         return(
             <div className="todo-item">
                 <input type="checkbox" 
                 checked={this.props.item.completed} 
                 onChange={() => this.props.handleChange(this.props.item.id)}/>
-                {this.props.item.text}
+                <p style={this.props.item.completed ? completedStle : null}>{this.props.item.text}</p>
             </div>
         );
     }

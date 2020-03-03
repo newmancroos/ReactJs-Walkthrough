@@ -23,11 +23,18 @@ background-color:lightblue;
 text-align: center;
 }
 .todo-item{
-  width: 400px;
+  width: 350px;
   border-color: black;
+  /* padding: 1px 1px 1px 15px; */
   background-color: cadetblue;
   padding-bottom: 2px;
   margin-bottom: 5px;
   position: relative;
-  height: 30px;
+  height: 70px;
 }
+/* .todo-item {
+  border-bottom: 1px dotted #cfcfcf;
+  font-size: 20px;
+  padding: 6px;
+  position: relative;
+} */

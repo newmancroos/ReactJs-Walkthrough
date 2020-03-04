@@ -164,4 +164,44 @@
       <br/>
       {this.state.gender}  
     </pre>
+    <br>
+    <u>Select</u>
+    it is same as regualr inut box
+    <pre>
+    &lt;lable&gt;
+      Select city :
+      &lt;select name="city" value={this.state.city} onChange={this.handleChange}&gt;
+        &lt;option id="1" value="1"&gt;&lt;/option&gt;  
+        &lt;option id="2" value="2"&gt;Rockville&lt;/option&gt; 
+        &lt;option id="3"  value="3"&gt;Shadygrow&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;/lable&gt;   
+      <br/>
+      {this.state.city}  
+    </pre>
+    <br/>
+    In HTML5 button inside form is acts as inout type submit
+    <br/>
+    <br/>
+    <p>
+        <ul>
+            <li>When we use Arrow function in react we no longer want to bind that 
+            <pre>
+                //function in the Constructor
+                this.handleChange = this.HandleChange.bind(this)  --- No need in Arrow function
+             </pre>
+            </li>
+            <li>
+                we can declare state out side the Constructor so that we don't need Constructor any more untile if we use any props.
+                <br>
+                <pre>
+                    state={
+                            firstName:""
+                    }
+                </pre>
+            </li>
+            <li>
+            </li>
+        </ul>
+    </p>
 </p>

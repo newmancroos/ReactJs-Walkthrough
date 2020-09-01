@@ -1,54 +1,72 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-// import { Card, CardImg, CardText, CardBody,
-//   CardTitle, CardSubtitle } from 'rea';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import MainContent from './components/MainContent';
+
+// import productData from './productData';
+// import Product from './components/Product';
 
 import TodoItem from './components/TodoItem';
 import todosData from './todosData';
+//#region 
+// function App() {
+//   //#region old
+//   // const nums = [1,2,3,4,5,6,7,8,9,10];
+//   // var doubles = nums.map((x) => {
+//   //       //console.log(x);
+//   //       return x * 2;
+//   // });
+//   // doubles.map((x) =>{
+//   //   console.log(x);
+//   // });
 
+//  //const proddata = productData.map(item=> <Product key= {item.id} product={item}/>);
+
+//   // return (
+//   //   <div>
+//   //     <Header  />
+//   //    {
+//   //       productData.map((item)=>
+//   //         <div>
+//   //             <Product key={item.id} product={item} /> <hr/>
+//   //         </div>
+//   //       )
+//   //     }
+//   //     {/* {proddata} */}
+//   //     <MainContent/>
+//   //     <Footer/>
+//   //   </div>
+//   // );
+// //#endregion
+
+//   //Todo start here
+//   const todoItems = todosData.map((item) => <TodoItem key={item.id} item={item} />)
+//   return(
+//     <div>
+//     {todoItems}
+//     </div>
+//   )
+
+// }
+//#endregion
 class App extends Component{
   constructor(props)
   {
     super()
     this.state = {
-     todos: todosData
+      answer : "Yes"
     }
-    this.handleChange = this.handleChange.bind(this)
   }
-  handleChange(id)
-  {
-    this.setState(prevState =>{
-      const updatedToDos = prevState.todos.map(todo =>{
-        if(todo.id === id)
-        {
-          todo.completed = !todo.completed
-        }
-        return todo
-      })
-      return{
-        todos : updatedToDos
-      }
-    })
-  }
+  //Our own method goes here
   render()
   {
-    const todoItems = this.state.todos.map((item) => <TodoItem key={item.id} item={item}  handleChange={this.handleChange}/>)
+    //call you own method here before return
+    const todoItems = todosData.map((item) => <TodoItem key={item.id} item={item} />)
     return(
-      <div className="container">
+      <div>
       {todoItems}
-      {/* <div className="row">
-        <div className="card mb-2" >
-          <div className="card-body">
-            <h4 className="card-title">Card title</h4>
-            <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p className="card-text">test</p>
-            <a href="#" className="card-link">Card link</a>
-            <a href="#" className="card-link">Another link</a>
-          </div>
-        </div>
-      </div> */}
       </div>
     )
   }
